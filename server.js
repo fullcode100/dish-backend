@@ -105,3 +105,7 @@ app.use(router);
 app.listen(port, () => {
   console.log(`api is ready on http://localhost:${port}`);
 });
+
+app.listen(port, () => {
+  console.log(`api is ready on http://localhost:${port}`);
+});
