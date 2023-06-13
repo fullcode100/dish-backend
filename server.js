@@ -41,15 +41,6 @@ router.get("/dishes/:_id", (req, res) => {
   });
 });
 
-router.get("/dishes/:_id", (req, res) => {
-  const dish = _dishes.find((x) => x._id === req.params._id);
-
-  res.json({
-    status: "OK",
-    data: dish ? dish : null,
-  });
-});
-
 router.get("/dishes/:_id/1", (req, res) => {
   const dish = _dishes.find((x) => x._id === req.params._id);
 
