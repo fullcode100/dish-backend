@@ -98,6 +98,19 @@ router.delete("/dishes/:_id", (req, res) => {
   });
 });
 
+router.delete("/dishes/:_id", (req, res) => {
+  let dishIndex = _dishes.findIndex((x) => x._id === req.params._id);
+
+  if (dishIndex !== -1) {
+    _dishes.splice(dishIndex, 1);
+  }
+
+  res.json({
+    status: "OK",
+    message: dishIndex !== -1 ? "Dish deleted" : "Dish not found",
+  });
+});
+
 //
 app.use(router);
 
