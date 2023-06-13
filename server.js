@@ -31,6 +31,13 @@ router.get("/dishes/clear", (req, res) => {
   });
 });
 
+router.get("/dishes/clear", (req, res) => {
+  _dishes = [];
+
+  res.json({
+    status: "OK",
+  });
+});
 // get dish by id
 router.get("/dishes/:_id", (req, res) => {
   const dish = _dishes.find((x) => x._id === req.params._id);
