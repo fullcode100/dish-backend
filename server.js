@@ -48,6 +48,14 @@ router.get("/dishes/:_id", (req, res) => {
   });
 });
 
+router.get("/dishes/:_id/1", (req, res) => {
+  const dish = _dishes.find((x) => x._id === req.params._id);
+
+  res.json({
+    status: "OK",
+    data: dish ? dish : null,
+  });
+});
 // insert/update dish
 router.put("/dishes", (req, res) => {
   if (req.body == null) {
@@ -126,6 +134,7 @@ app.listen(port, () => {
   console.log(`api is ready on http://localhost:${port}`);
 });
 
+<<<<<<< HEAD
 router.delete("/dishes/:_id", (req, res) => {
   let dishIndex = _dishes.findIndex((x) => x._id === req.params._id);
 
@@ -137,4 +146,8 @@ router.delete("/dishes/:_id", (req, res) => {
     status: "OK",
     message: dishIndex !== -1 ? "Dish deleted" : "Dish not found",
   });
+=======
+app.listen(port, () => {
+  console.log(`api is ready on http://localhost:${port}`);
+>>>>>>> 5538daa1929eea3002561e834d988959e451d2b7
 });
